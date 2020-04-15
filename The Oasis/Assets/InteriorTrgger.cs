@@ -10,7 +10,8 @@ public class InteriorTrgger : MonoBehaviour
     public enum scenes
     {
         Village,
-        Home
+        Home,
+        ElderHQ
     }
 
     public scenes loadScene;
@@ -22,4 +23,6 @@ public class InteriorTrgger : MonoBehaviour
             SceneManager.LoadScene((int)loadScene);
         }
     }
+
+   
 }

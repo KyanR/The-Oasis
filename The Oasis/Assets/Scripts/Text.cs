@@ -9,7 +9,7 @@ public class Text : MonoBehaviour
     public EvidenceCollectable icon;
     void Update()
     {
-        supCount.SetText("Supporters: " + Collectable.supCount.ToString());
+        supCount.SetText("Influence: " + Collectable.supCount.ToString());
 
     }
 }
