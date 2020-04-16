@@ -12,12 +12,10 @@ public class Player : MonoBehaviour
     Vector2 movement;
     public Animator animator;
 
-    void Start()
-    {
-        
-    }
+    public static bool elderHQDoor = false;
+    public static bool homeDoor = false;
 
-    // Update is called once per frame
+
     void Update()
     {
        movement.x = Input.GetAxis("Horizontal");
@@ -31,5 +29,19 @@ public class Player : MonoBehaviour
     {
         rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
         rb.velocity = new Vector2(movement.x, movement.y);
+    }
+
+    private void OnTriggerEnter2D(Collider2D door)
+    {
+        if (door.gameObject.tag == "ElderHQTrigger")
+        {
+            elderHQDoor = true;
+            Debug.Log(elderHQDoor);
+        }
+
+        if (door.gameObject.tag == "HomeTrigger")
+        {
+            homeDoor = true;
+        }
     }
 }
