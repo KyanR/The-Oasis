@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3929860296218355220}
   - component: {fileID: 9183644279989080750}
   - component: {fileID: 4563780918965879957}
+  - component: {fileID: 4148992972398001516}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -97,16 +98,16 @@ Rigidbody2D:
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
+  m_UseAutoMass: 1
+  m_Mass: 0.098194055
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_CollisionDetection: 1
+  m_Constraints: 4
 --- !u!95 &3929860296218355221
 Animator:
   serializedVersion: 3
@@ -138,7 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f0bafc15c83f6645bfc25e18e35a805, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 3
   rb: {fileID: 3929860296218355226}
   animator: {fileID: 3929860296218355221}
 --- !u!58 &9183644279989080750
@@ -173,3 +174,11 @@ CircleCollider2D:
   m_Offset: {x: 0.028493404, y: -1.4531779}
   serializedVersion: 2
   m_Radius: 0.44198513
+--- !u!81 &4148992972398001516
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3929860296218355223}
+  m_Enabled: 1

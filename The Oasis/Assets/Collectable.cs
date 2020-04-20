@@ -6,28 +6,35 @@ using UnityEngine.UI;
 public class Collectable : MonoBehaviour
 {
     public GameObject Player;
-    public EvidenceCollectable Evidence;
+    //public EvidenceCollectable Evidence;
+    public GameObject chestOpen;
+    public GameObject book;
 
     public static int supCount;
     public static float inf;
+    bool opened;
 
-    public Image influenceCount;
+    //public Image influenceCount;
 
     private void Start()
     {
-        inf = influenceCount.fillAmount;
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject == Player)
+        if (collision.gameObject == Player && opened == false)
         {
-            Destroy(this.gameObject);
-            supCount++;
-            influenceCount.fillAmount -= 0.1f;
-        }
-          
+            Instantiate(book, transform.position, Quaternion.identity);
+            chestOpen.gameObject.SetActive(true);
+            opened = true;
             
+        }
+    }
+
+    private void Update()
+    {
+        
     }
 
 }

@@ -6,6 +6,7 @@ public class Timer : MonoBehaviour
 {
     public Image timerBar;
     public Image influenceBar;
+    public TimerBarCountDown barProgress;
 
     private void Start()
     {
@@ -13,9 +14,10 @@ public class Timer : MonoBehaviour
     }
     void Update()
     {
-        timerBar.fillAmount = LinearTimer.timeLeft / LinearTimer.maxTime;
-        LinearTimer.timeLeft -= Time.deltaTime;
-
+        //timerBar.fillAmount = LinearTimer.timeLeft / LinearTimer.maxTime;
+        //LinearTimer.timeLeft -= Time.deltaTime;
+        timerBar.fillAmount = barProgress.timeLeft / barProgress.maxTime;
+        barProgress.timeLeft -= Time.deltaTime;
       
 
         if (timerBar.fillAmount == 0f)

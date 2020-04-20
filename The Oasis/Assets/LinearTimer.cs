@@ -27,9 +27,10 @@ public class LinearTimer : MonoBehaviour
             timeLeft -= Time.deltaTime;
             timerBar.fillAmount = timeLeft / maxTime;
         }
-        else
+        if  (timerBar.fillAmount == 0)
         {
-            Time.timeScale = 0;
+
+            Time.timeScale = 1;
             gameover = true;
             Debug.Log("game over");
         }
